@@ -10,6 +10,9 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 import { ROUTES } from './app.routes';
 
+import { HttpClientModule } from "@angular/common/http";
+import { SpotiftyService } from './services/spotifty.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +22,7 @@ import { ROUTES } from './app.routes';
     NavbarComponent,
   ],
   imports: [BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTES,{useHash:true})
   ],
   providers: [],
