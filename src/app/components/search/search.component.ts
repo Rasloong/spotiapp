@@ -9,14 +9,20 @@ import { ArtistComponent } from '../artist/artist.component';
 })
 export class SearchComponent implements OnInit {
   artists: any[] = [];
-  constructor(private sp: SpotiftyService) {}
+  loading: boolean;
+  constructor(private sp: SpotiftyService) {
+    this.loading = true;
+  }
 
   ngOnInit(): void {}
 
   buscar(termino: string) {
-    console.log(termino);
+    this.loading = true;
     this.sp.getArtist(termino).subscribe((data: any) => {
       this.artists = data;
     });
+    setTimeout(() => {
+      this.loading = false;
+    }, 500);
   }
 }

@@ -15,20 +15,20 @@ export class SpotiftyService {
     const url = `https://api.spotify.com/v1/${query}`;
     const headers = new HttpHeaders({
       Authorization:
-        'Bearer BQCsvGuMSX69k2z8VjaOas3fxOzbE-Gw4Mb8J42niTMskn5AgkgCHpe5GS3fKjeC3J83w4SFJuVcgyhR3Qw'
+        'Bearer BQAumF35Lm471qZF6WYk6BHiNGVXoDKH1JDRJeX3X1bJntBivI4-hdWxGwz70BUPzMZBsMbOq1pwZr_6GUg',
     });
-    return this.http.get(url,{headers});
+    return this.http.get(url, { headers });
   }
   getNewReleases() {
-    return this.getQuery('browse/new-releases?country=CO')
-    .pipe(map((data) => {
+    return this.getQuery('browse/new-releases?country=CO').pipe(
+      map((data) => {
         return data['albums'].items;
       })
     );
   }
   getArtist(termino: string) {
-    return this.getQuery(`search?q=${termino}&type=artist`)
-      .pipe(map((data) => {
+    return this.getQuery(`search?q=${termino}&type=artist`).pipe(
+      map((data) => {
         return data['artists'].items;
       })
     );
