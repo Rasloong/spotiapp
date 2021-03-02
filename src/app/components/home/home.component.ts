@@ -9,8 +9,7 @@ export class HomeComponent {
   newReleases: any[] = [];
   constructor(private sp: SpotiftyService) {
     this.sp.getNewReleases().subscribe((data: any) => {
-      console.log(data.albums.items);
-      this.newReleases = data.albums.items;
+      this.newReleases = data;
     });
   }
 }
