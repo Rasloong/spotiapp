@@ -13,6 +13,7 @@ import { ROUTES } from './app.routes';
 import { HttpClientModule } from "@angular/common/http";
 import { SpotiftyService } from './services/spotifty.service';
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { CardsComponent } from './components/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     ArtistComponent,
     NavbarComponent,
     NoimagePipe,
+    CardsComponent,
   ],
   imports: [BrowserModule,
     HttpClientModule,

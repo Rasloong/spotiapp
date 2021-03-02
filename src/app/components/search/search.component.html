@@ -3,11 +3,4 @@
         <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Search Artist">
     </div>
 </div>
-<div class="card-columns">
-    <div *ngFor="let artist of artists" class="card animated fadeIn m-2">
-        <img class="card-img-top img-fluid " [src]="artist.images|noimage " [alt]=" ">
-        <div class="card-body ">
-            <h5 class="card-title ">{{artist.name}}</h5>
-        </div>
-    </div>
-</div>
+<app-cards [items]="artists"></app-cards>
