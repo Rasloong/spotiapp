@@ -18,4 +18,14 @@ export class SpotiftyService {
       headers,
     });
   }
+  getArtist(termino:string){
+    const headers = new HttpHeaders({
+      Authorization:
+        'Bearer BQBAxiWdSuYGqw2GtEZwjma7slXGh0AmhczYSuZBZETIH1x6WyewkWPR7ZM0Uj57ZSMCrfSY7DSuthYoUWVVkBPAHUhPKZVcxHjT7T_7c3JDW7FSTgKg0l82AALXBO2Kyegsh88qs7lXIL_N',
+    });
+
+    return this.http.get(`https://api.spotify.com/v1/search?q=${termino}&type=artist`, {
+      headers,
+    });
+  }
 }
