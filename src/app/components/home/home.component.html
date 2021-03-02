@@ -1,1 +1,9 @@
-<p>home works!</p>
+<div class="card-columns">
+    <div *ngFor="let cancion of newReleases" class="card animated fadeIn m-2">
+        <img class="card-img-top img-fluid " [src]="cancion.images[0].url " [alt]=" ">
+        <div class="card-body ">
+            <h5 class="card-title ">{{cancion.name}}</h5>
+            <span *ngFor="let artist of cancion.artists " class="badge rounded-pill bg-primary ">{{artist.name}}</span>
+        </div>
+    </div>
+</div>

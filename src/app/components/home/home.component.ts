@@ -3,14 +3,14 @@ import { SpotiftyService } from '../../services/spotifty.service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
 })
 export class HomeComponent {
-
-  constructor(private sp:SpotiftyService) {
-    this.sp.getNewReleases();
-   }
-
-
-
+  newReleases: any[] = [];
+  constructor(private sp: SpotiftyService) {
+    this.sp.getNewReleases().subscribe((data: any) => {
+      console.log(data.albums.items);
+      this.newReleases = data.albums.items;
+    });
+  }
 }
