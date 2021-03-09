@@ -7,12 +7,14 @@ import { SpotiftyService } from '../../services/spotifty.service';
 })
 export class ArtistComponent implements OnInit {
   artist:any={};
+  topTracks:[]=[];
   loading: boolean;
   constructor(private router:ActivatedRoute,
     private sp:SpotiftyService) {
     this.router.params.subscribe(params=>{
       console.log(params);
       this.getArtist(params['id']);
+      this.getTopTracks(params['id']);
     })
   }
 
@@ -26,4 +28,10 @@ export class ArtistComponent implements OnInit {
       this.loading = false;
     }, 500);
   }
+
+  getTopTracks(id:string){
+    this.sp.getTopTracks(id)
+    .subscribe(tt=>{this.topTracks=tt;})
+  }
+
 }
