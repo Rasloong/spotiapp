@@ -13,7 +13,7 @@ export class HomeComponent {
     this.loading = true;
     this.sp.getNewReleases().subscribe((data: any) => {
       this.newReleases = data;
-      delay(1000);
+      delay(500);
       setTimeout(() => {
         this.loading = false;
       }, 500);
